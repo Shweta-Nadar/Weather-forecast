@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kumar+One&family=Quicksand:wght@300..700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("pixelbg.png");
+    /* background: linear-gradient(135deg, #ffa8bd, #ffffff); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;  
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #c2185b;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+    font-size: 2.4rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color:#c2185b;
+}
+
+button {
+    padding: 12px 24px;
+    background: #e74284;
+    border: none;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #FFC2D1;
+}
+
+.weather-info {
+    text-align: center;
+}
+
+.city-name h2 {
+    color: #000000;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.weather-main {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers the image horizontally */
+    justify-content: center;
+}
+
+.weather-main img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.temperature {
+    font-size: 3rem;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: #232121;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background:#FFE5EC;
+    border-radius: 15px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label {
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+#humidity, #windSpeed {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .weather-card {
+        padding: 1.5rem;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .temperature {
+        font-size: 2.5rem;
+    }
+}

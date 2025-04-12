@@ -23,17 +23,11 @@ async function getWeather() {
 
     try {
         
-        const response = await fetch(
-            `${BASE_URL}?q=${city}&units=metric&appid=${API_KEY}`
-        );
-        
+        const response = await fetch(`${BASE_URL}?q=${city}&units=metric&appid=${API_KEY}`);
         if (!response.ok) {
             throw new Error('City not found');
         }
-
-        const data = await response.json();
-        
-        
+        const data = await response.json();     
         updateWeatherUI(data);
         
     } catch (prob) {
@@ -55,13 +49,12 @@ function updateWeatherUI(data) {
 
 
 function resetWeatherUI() {
-    cityName.textContent = '--';
-    temperature.textContent = '--';
-    description.textContent = '--';
-    humidity.textContent = '--%';
-    windSpeed.textContent = '-- km/h';
+    cityName.innerHTML = '--';
+    temperature.innerHTML = '--';
+    description.innerHTML = '--';
+    humidity.innerHTML = '--%';
+    windSpeed.innerHTML = '-- km/h';
     weatherIcon.style.display = 'none';
-    weatherIcon.alt = 'City not found';
 }
 
 
